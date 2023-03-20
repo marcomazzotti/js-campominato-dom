@@ -60,6 +60,10 @@ function ItemClick() {
     const clickedNumber = parseInt(this.querySelector("span").textContent);
     this.classList.add("green");
     console.log(`Hai scelto il numero ${clickedNumber}`);
+    if (bombs.includes(clickedNumber)){
+      this.classList.add("red");
+      alert("GAME OVER")
+    }
 }
 
 
@@ -75,7 +79,6 @@ function ItemClick() {
 
 //Genero le bombe
 const bombs = generateBombs(16, 100);
-console.log(bombs);
 
 function generateBombs(numbersQuantity, maxNumber) {
   const numbers = [];
@@ -91,3 +94,17 @@ function generateBombs(numbersQuantity, maxNumber) {
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
 }
+
+
+//se utente clicca su una bomba
+
+// function handleClick () {
+//   const bombsArray = bombs;
+//   const clickedNumber = parseInt(this.querySelector("span").textContent);
+//   if(bombs.includes(clickedNumber)) {
+//     this.classList.add("red");
+//     console.log("HAI PERSO");
+//   }
+// }
+
+console.log(bombs);
